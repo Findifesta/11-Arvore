@@ -179,8 +179,24 @@ void exibirElementosArvore(NO* no)
 
 void buscarElementoArvore(NO* no, int valor)
 {
+	if (no == NULL) {
+		cout << "Valor nao encontrado.\n";
+		return;
+	}
 
-
+	else if (no->valor == valor)
+	{
+		cout << "Valor encontrado\n";
+		return;
+	}
+	else if (no->valor > valor)
+	{
+		buscarElementoArvore(no->esq,valor);
+	}
+	else 
+	{
+		buscarElementoArvore(no->dir,valor);
+	}
 }
 
 
